@@ -3,9 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleIconFiles</key>
-	<array>
-		<string>icon</string>
-	</array>
+	<array/>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>CFBundleDevelopmentRegion</key>

@@ -15,7 +15,7 @@ struct ARViewContainer: UIViewRepresentable {
     func makeUIView(context: Context) -> ARView {
         
         let arView = ARView(frame: .zero)
-        arView.debugOptions = [.showStatistics, .showFeaturePoints]
+        //arView.debugOptions = [.showStatistics, .showFeaturePoints]
         
         // Load the "Box" scene from the "Experience" Reality File
         //let boxAnchor = try! Experience.loadBox()
@@ -23,7 +23,7 @@ struct ARViewContainer: UIViewRepresentable {
         // Add the box anchor to the scene
         //arView.scene.anchors.append(boxAnchor)
         
-        let anchor = AnchorEntity(plane: .horizontal, minimumBounds: [0.15, 0.15])
+        let anchor = AnchorEntity() //plane: .horizontal, minimumBounds: [0.15, 0.15]
         arView.scene.anchors.append(anchor)
         let textMesh = MeshResource.generateText(
         text,
