@@ -64,13 +64,18 @@ class Room: ObservableObject{
         //assumes user puts right room number
     }
     func parse(json: Data) {
+        print(json)
         let decoder = JSONDecoder()
         if let jsonPetitions = try?
             decoder.decode(Session.self, from: json) {
             DispatchQueue.main.async() {
+                print("here")
                 self.text = jsonPetitions.text
                 self.roomNumber = jsonPetitions.room
+                print(jsonPetitions)
             }
+        } else{
+            print("failed")
         }
         
     }
@@ -86,7 +91,7 @@ class Room: ObservableObject{
                   }
                   if let data = data{
                     do {
-                            
+                        print("parsing")
                         self.parse(json:data)
                     } catch{
                     }
@@ -95,8 +100,6 @@ class Room: ObservableObject{
           }
           task.resume()
       }
-    
-    
 }
 
 struct Session: Codable {

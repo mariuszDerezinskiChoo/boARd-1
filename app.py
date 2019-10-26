@@ -43,8 +43,8 @@ def room():
         db.session.commit()
         entry = adding.iden
         print(entry)
-        payload = { 'room' : entry,
-                'text' : adding.text
+        payload = { 'room' : "5",#entry,
+                'text' : "fuck this" #adding.text
                 }
         return jsonify(payload)
     
