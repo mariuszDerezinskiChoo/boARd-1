@@ -53,7 +53,7 @@ def getText():
     user_id = request.args.get('id')
     print(user_id)
     payload = {'room' : user_id,
-               'text' : Room.query.filter_by(user_id).first().text
+               'text' : Room.query.filter_by(iden = int(user_id)).first().text
                }
     return jsonify(payload)
 
