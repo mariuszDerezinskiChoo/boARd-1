@@ -65,7 +65,7 @@ def putText():
     test = data['message']
     user_id=data['id']
     print(user_id + test)
-    group = Room.query.filter_by(iden = int(test)).first()
+    group = Room.query.filter_by(iden = int(user_id)).first()
     group.text = data['message']
     db.session.commit()
     
