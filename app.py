@@ -61,7 +61,8 @@ def getText():
 def putText():
     data = request.get_json()
     test = data['message']
-    print(test)
+    user_id=data['id']
+    print(user_id + test)
     group = Room.query.filter_by(iden = int(test)).first()
     group.text = data['message']
     db.session.commit()
