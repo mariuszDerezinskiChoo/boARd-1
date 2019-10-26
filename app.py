@@ -53,6 +53,7 @@ def getText():
     user_id = request.args.get('id')
     print(user_id)
     text = Room.query.filter_by(iden = int(user_id)).first().text
+    print(text)
     payload = {'room' : user_id,
                'text' : text
                }
