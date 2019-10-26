@@ -42,6 +42,7 @@ def room():
         db.session.add(adding)
         db.session.commit()
         entry = adding.iden
+        print(entry)
         payload = { 'room' : entry,
                 'text' : adding.text
                 }
